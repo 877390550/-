@@ -9,11 +9,11 @@
       </transition>
       <div class="input-field">
         <i class="fa fa-user"></i>
-        <input type="text" placeholder="用户名" v-model="username" />
+        <input type="text" placeholder="用户名" v-model="username" value="2357561424"/>
       </div>
       <div class="input-field">
         <i class="fa fa-lock"></i>
-        <input type="password" placeholder="密码" v-model="password" />
+        <input type="password" placeholder="密码" v-model="password" value="123456"/>
       </div>
       <transition name="fade">
         <div class="input-field" v-show="isSignup">
