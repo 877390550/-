@@ -54,7 +54,7 @@
               </div>
               <div class="bottomcontent">
                 <div class="duration" >
-                  {{item.duration}}
+                  {{renderDuration(item.duration).M}}:{{renderDuration(item.duration).S}}
                 </div> 
                 <div class="time">
                   <span class="time">{{ renderTime(item.time).time }}</span>
@@ -415,6 +415,14 @@ export default {
         Y,
         D,
       };
+    },
+    renderDuration(time){
+      const inttime=parseInt(time)
+      const M=inttime/60<10?"0"+(inttime/60).toFixed(0):(inttime/60).toFixed(0);
+      const S=inttime%60<10?"0"+inttime%60:inttime%60;
+      return{
+        M,S
+      }
     },
     judgeTime() {
       const currentYear = new Date().getFullYear();

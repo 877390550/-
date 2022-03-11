@@ -133,13 +133,20 @@
                         .progress{
                             max-width: 100px;
                             height: 5px;
-                            background-color: red;
+                            background-color: #538AC1;
                         }
                         .bottomcontent{
                             display: flex;
                             .duration{
                                 font-size: 12px;
+                                color: #538AC1;
                             }
+                        }
+                        .time{
+                            font-size: 12px;
+                            position: absolute;
+                            right: 5px;
+                            bottom: 0px;
                         }
                       
                     }
@@ -206,6 +213,11 @@
                 color: #667481;
             }
         }
+        .audio{
+            .time{
+                color: #667481;
+            }
+        }
         }
         .left::before{
             position: absolute;
@@ -235,6 +247,11 @@
                 .time{
                     color: #7CA2C9;
                 }
+            }
+            .audio{
+                .time{
+                    color: #7CA2C9;
+                } 
             }
         }
         .right::before{
