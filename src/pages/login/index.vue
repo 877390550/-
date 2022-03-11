@@ -162,7 +162,7 @@ export default {
       });
       const nickname=sessionStorage.getItem("nickname");
       if (sessionStorage.getItem("nickname") != "") {
-        axios.get("http://api.btstu.cn/sjtx/api.php?lx=c1&format=json")
+        axios.get("https://api.uomg.com/api/rand.avatar?sort=男&format=json")
         .then((res) => {
             this.updateOwnUserInfo({
               infoValue: res.data.imgurl,
