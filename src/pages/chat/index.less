@@ -1,0 +1,45 @@
+:root{
+    --bar:#1F2936;
+    --deputy:#242F3D;
+    --word:#fff;
+}
+.layout{
+    background-color: var(--bar);
+    position: absolute;
+    width: 60%;
+    height: 95%;
+    border: 1px var(--bar) solid;
+    border-radius: 8px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px 1px grey;
+    overflow: hidden;
+    .message{
+        position: relative;
+        width: 65%;
+        height: 97%;
+        border-top: 1px #17212B solid;
+        bottom: -3%;
+        border-radius: 8px;
+    }
+
+}
+@media(max-width:570px){
+    body{
+        overflow: hidden;
+        .layout{
+            width: 100%;
+            height: 100%;
+            display: block;
+            .message{
+                width: 100%;
+            }
+        }
+    }
+
+   
+}

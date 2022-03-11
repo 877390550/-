@@ -1,0 +1,364 @@
+/* css3引入自己想要的字体的方式 */
+@font-face {
+    /* 给字体自己命名，使用时写这个名字就OK */
+    font-family: Poppins;
+    /* 引入ttf文件 */
+    src: url(../../assets/Poppins.ttf);
+  }
+
+  input,
+  .btn {
+    /* sans-serif是另一种字体，它保证在大部分计算机上能够被调用，如果Poppins不被调用的话，就用这个字体替代 */
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .container {
+    position: absolute;
+    width: 100%;
+    /* 元素的最小高度，1vh就是当前屏幕可见高度的1%，100%就是填满整个屏幕*/
+    min-height: 100vh;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  
+  .form {
+    position: absolute;
+    top: 20%;
+    width: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem;
+    overflow: hidden;
+    z-index: 1;
+    transition: .5s 0s ease-in-out;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .input-field {
+    max-width: 380px;
+    width: 100%;
+    height: 55px;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 55px;
+    /* https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html */
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+  }
+  
+  .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    font-size: 1.1rem;
+  }
+  
+  .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+  }
+  
+  .contentplaceholder {
+    background-color: #fff;
+  }
+  
+  .btn {
+    width: 150px;
+    height: 49px;
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #5995fd;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: 0.5s;
+    font-size: large;
+    text-align: center;
+  }
+  .btn:hover {
+    background-color: #4d84e2;
+  }
+  
+  .btn.transparent {
+    margin: 0;
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    width: 130px;
+    height: 41px;
+    font-weight: 600;
+    font-size: large;
+    text-align: center;
+  }
+  
+  .image {
+    position: absolute;
+    width: 20%;
+    z-index: 3;
+    bottom: 10%;
+  }
+  .left-image {
+    left: 15%;
+
+  }
+  .right-image {
+    right: 15%;
+  }
+  
+  .social-text {
+    padding: 0.7rem 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icon {
+    height: 46px;
+    width: 46px;
+    border: 1px solid #333;
+    margin: 0 0.45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  .social-icon:hover {
+    color: #4481eb;
+    border-color: #4481eb;
+  }
+  
+  /* 遮罩 */
+  .container::before {
+    content: "";
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, #4481eb, #04befe);
+    top: -10%;
+    right: 48%;
+    transform: translateY(-50%);
+    transition: .5s ease-in-out;
+    z-index: 2;
+  }
+  
+  /* PC端动画 */
+  .form.sign-up-mode {
+    transform: translateX(-100%);
+  }
+
+  /* 左边的图片和文字动画 */
+  @keyframes left-in-out {
+    to {
+      transform: translateX(-300%);
+    }
+  }
+  
+  .lcontent-leave-active {
+    animation: left-in-out .4s .2s ease-in-out;
+  }
+  .lcontent-enter-active {
+    animation: left-in-out .4s .4s ease-in-out reverse backwards;
+  }
+  .limage-leave-active {
+    animation: left-in-out .6s .2 ease-in-out;
+  }
+  .limage-enter-active {
+    animation: left-in-out .6s .2s ease-in-out reverse backwards;
+  }
+  
+  /* 右边的文字和动画 */
+  @keyframes right-in-out {
+    to {
+      transform: translateX(300%);
+    }
+  }
+  
+  .rcontent-leave-active {
+    animation: right-in-out .4s .2s ease-in-out;
+  }
+  .rcontent-enter-active {
+    animation: right-in-out .4s .4s ease-in-out reverse backwards;
+  }
+  .rimage-leave-active {
+    animation: right-in-out .6s .2s ease-in-out;
+  }
+  .rimage-enter-active {
+    animation: right-in-out .6s .2s ease-in-out reverse backwards;
+  }
+  
+
+  
+  /* 遮罩动画 */
+  .container.sign-up-mode:before {
+    transform: translate(100%, -50%);
+    right: 52%;
+  }
+  
+  .fade-enter-active {
+    animation: form 1s ease-in-out backwards;
+  }
+  .fade-leave-active {
+    animation: form 1s ease-in-out reverse;
+  }
+  .fade-leave-to,
+  .fade-enter {
+    display: none;
+  }
+  
+  @keyframes form {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* 屏幕适配 */
+  
+  @media (max-width: 870px) {
+    .container {
+      min-height: 800px;
+      height: 100vh;
+    }
+  
+    .form {
+      width: 100%;
+      left: 0;
+      top: 40%;
+    }
+  
+    .image {
+      width: 30%;
+    }
+  
+    .left-image {
+      top: 5%;
+      left: 50%;
+    }
+    .right-image {
+      bottom: 5%;
+      right: 5%;
+    }
+    /* 遮罩 */
+    .container::before {
+      width: 1500px;
+      height: 1500px;
+      left: 30%;
+      bottom: 68%;
+      transform: translateX(-50%);
+      right: initial;
+      top: initial;
+    }
+  
+    /* 动画 */
+    /* 上方文字和图片动画 */
+    @keyframes up-in-out {
+      from {
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-200%);
+        opacity: 0;
+      }
+    }
+    .lcontent-leave-active {
+      animation: up-in-out .4s .4s ease-in-out;
+    }
+    .lcontent-enter-active {
+      animation: up-in-out .4s .4s ease-in-out reverse backwards;
+    }
+    .limage-leave-active {
+      animation: up-in-out .6s .2s ease-in-out;
+    }
+    .limage-enter-active {
+      animation: up-in-out .6s .2s ease-out reverse backwards;
+    }
+  
+    /* 下方文字和图片动画 */
+    @keyframes down-in-out {
+      from {
+        opacity: 1;
+      }
+      to {
+        transform: translateY(200%);
+        opacity: 0;
+      }
+    }
+    .rcontent-leave-active {
+      animation: down-in-out .4s .4s ease-in-out;
+    }
+    .rcontent-enter-active {
+      animation: down-in-out .4s .4s ease-in-out reverse backwards;
+    }
+    .rimage-leave-active {
+      animation: down-in-out .6s .2s ease-in-out;
+    }
+    .rimage-enter-active {
+      animation: down-in-out .6s .2s ease-out reverse backwards;
+    }
+  
+    .container.sign-up-mode:before {
+      transform: translate(-50%, 100%);
+      bottom: 32%;
+      right: initial;
+    }
+
+    .form.sign-up-mode {
+        transform: translateY(-50%);
+      }
+
+  }
+
+
+  
+  @media (max-width: 570px) {
+    .image {
+      display: none;
+    }
+    form {
+      padding: 0 6rem;
+    }
+    /* 遮罩 */
+    .container:before {
+      bottom: 72%;
+      left: 50%;
+    }
+    /* 遮罩动画 */
+    .container.sign-up-mode:before {
+      bottom: 28%;
+      left: 50%;
+    }
+  }

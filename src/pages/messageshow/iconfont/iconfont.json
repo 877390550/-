@@ -1,0 +1,44 @@
+{
+  "id": "2961741",
+  "name": "message",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6255766",
+      "name": "语音",
+      "font_class": "yuyin2",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "4611764",
+      "name": "回形针",
+      "font_class": "huixingzhen",
+      "unicode": "ebe6",
+      "unicode_decimal": 60390
+    },
+    {
+      "icon_id": "201555",
+      "name": "表情",
+      "font_class": "biaoqing",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "993873",
+      "name": "语音",
+      "font_class": "yuyin1",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "1189741",
+      "name": "向上箭头_圈",
+      "font_class": "xiangshangjiantouquan",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    }
+  ]
+}
