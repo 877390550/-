@@ -65,9 +65,9 @@
         <template #title> 没有账号? </template>
         <template #content>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae sed
-            dicta dolor saepe iusto earum enim, ipsum itaque id ratione? Ex quas
-            illo dicta debitis distinctio tempora facilis voluptatem neque.
+            可以登录测试账号使用功能：
+            账号：2357561424
+            密码：123456
           </p>
         </template>
         <template #button>
