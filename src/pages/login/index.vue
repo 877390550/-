@@ -65,9 +65,11 @@
         <template #title> 没有账号? </template>
         <template #content>
           <p>
-            可以登录测试账号使用功能：
-            账号：2357561424
-            密码：123456
+            可以登录测试账号使用功能：<br>
+            账号1：2357561424<br>
+            密码：123456<br>
+            账号2：877390550<br>
+            密码：123456<br>
           </p>
         </template>
         <template #button>
