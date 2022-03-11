@@ -1,4 +1,4 @@
-# signinandsignup
+# WebIM
 
 ## Project setup
 ```
