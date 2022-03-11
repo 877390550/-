@@ -162,22 +162,6 @@ export default {
         username: this.username.toLowerCase(),
         password: this.password,
       });
-      const nickname=sessionStorage.getItem("nickname");
-      if (sessionStorage.getItem("nickname") != "") {
-        axios.get("https://api.uomg.com/api/rand.avatar?sort=男&format=json")
-        .then((res) => {
-            this.updateOwnUserInfo({
-              infoValue: res.data.imgurl,
-              type:'avatarurl'
-            })
-          }).then(()=>{
-            this.updateOwnUserInfo({
-              infoValue:nickname,
-              type:'nickname'
-            })
-          })
-        sessionStorage.setItem("nickname", "");
-      }
     },
   },
 };
