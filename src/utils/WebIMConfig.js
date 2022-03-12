@@ -1,8 +1,8 @@
  const config = {
     socketServer: 'im-api-v2.easemob.com ',    // socket Server地址
     restServer: 'a1.easemob.com',               // rest Server地址
-    appKey: '1102200914181415#laipimao',        // App key
-    // appKey: 'easemob-demo#easeim',        // App key
+    // appKey: '1102200914181415#laipimao',        // App key
+    appKey: 'easemob-demo#easeim',        // App key
     https: true,                            // 是否使用https
     isHttpDNS: true,                          // 3.0 SDK支持，防止DNS劫持从服务端获取XMPPUrl、restUrl
     isMultiLoginSessions: false,              // 是否开启多页面同步收消息，注意，需要先联系商务开通此功能
