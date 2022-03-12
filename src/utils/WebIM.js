@@ -57,15 +57,17 @@ conn.listen({
 		const username = window.Vue.$store.state.login.username || localStorage.getItem("userInfo") && JSON.parse(localStorage.getItem("userInfo")).userId;
 		window.Vue.$store.dispatch('getLoginUserInfo', { userId: username })
 		window.Vue.$router.push('/chat')
-		console.log('来自onOpened'+sessionStorage.getItem("nickname"))
-		if(sessionStorage.getItem("nickname")!=''){
+		// console.log('来自onOpened'+sessionStorage.getItem("nickname"))
+		// console.dir(sessionStorage.getItem("nickname"))
+		const nickname=sessionStorage.getItem('nickname');
+		console.log('昵称为'+nickname);
+		if(nickname!=null&&nickname!=''){
 			console.log('注册并登录，即将修改昵称和头像')
-			const nickname=sessionStorage.getItem("nickname");
 			window.Vue.$store.dispatch('updateOwnUserInfo',{infoValue:nickname,type:'nickname'})
 			axios.get("https://api.uomg.com/api/rand.avatar?sort=男&format=json").then((res=>{
 				window.Vue.$store.dispatch('updateOwnUserInfo',{infoValue:res.data.imgurl,type:'avatarurl'})
 			}))
-			sessionStorage.setItem("nickname","")
+			sessionStorage.setItem("nickname",'')
 		}
 	},
 	// 连接关闭回调
